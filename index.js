@@ -10,6 +10,11 @@ app.get('/', (req, res) => {
   res.render('home', { num });
 });
 
+app.get('/r/:subreddit', (req, res) => {
+  const { subreddit } = req.params;
+  res.render('subreddit', { subreddit });
+});
+
 app.listen('3000', () => {
   console.log('Listening port 3000');
 });
